@@ -70,11 +70,14 @@ export default function Calendar() {
               <div className="grid grid-cols-2">
                 <h2 className="text-4xl">eCalendar</h2>
                 <div className="grid grid-cols-1 justify-items-end">
-                  <h2 className="text-4xl">
+                  <h2 className="text-4xl" suppressHydrationWarning>
                     {format(firstDayCurrentMonth, 'yyy')}
                   </h2>
                   {/* Clock */}
-                  <h2 className="grid grid-cols-2 justify-items-end">
+                  <h2
+                    className="grid grid-cols-2 justify-items-end"
+                    suppressHydrationWarning
+                  >
                     <ClockIcon className="h-4 mt-1 mr-1" />{' '}
                     {format(currentTime, 'pp')}
                   </h2>
@@ -82,13 +85,13 @@ export default function Calendar() {
               </div>
               {/* 3 months */}
               <div className="grid grid-cols-3 place-items-center pt-4 text-lg">
-                <h2 className="text-gray-500">
+                <h2 className="text-gray-500" suppressHydrationWarning>
                   {format(firstDayPreviousMonth, 'MMMM')}
                 </h2>
-                <h2 className="text-2xl">
+                <h2 className="text-2xl" suppressHydrationWarning>
                   {format(firstDayCurrentMonth, 'MMMM')}
                 </h2>
-                <h2 className="text-gray-500">
+                <h2 className="text-gray-500" suppressHydrationWarning>
                   {format(firstDayNextMonth, 'MMMM')}
                 </h2>
               </div>
@@ -115,7 +118,10 @@ export default function Calendar() {
                   <div>FRI</div>
                   <div>SAT</div>
                 </div>
-                <div className="grid grid-cols-7 h-56 auto-cols-min text-xs lg:gap-2 sm:text-sm sm:mt-4">
+                <div
+                  className="grid grid-cols-7 h-56 auto-cols-min text-xs lg:gap-2 sm:text-sm sm:mt-4"
+                  suppressHydrationWarning
+                >
                   {days.map((day, dayIdx) => (
                     <div
                       key={day.toString()}
@@ -126,6 +132,7 @@ export default function Calendar() {
                     >
                       <button
                         type="button"
+                        suppressHydrationWarning
                         onClick={() => setSelectedDay(day)}
                         className={classNames(
                           isEqual(day, selectedDay) && 'text-white',
@@ -152,12 +159,18 @@ export default function Calendar() {
                           'mx-auto flex h-8 w-8 items-center justify-center rounded-full'
                         )}
                       >
-                        <time dateTime={format(day, 'yyyy-MM-dd')}>
+                        <time
+                          dateTime={format(day, 'yyyy-MM-dd')}
+                          suppressHydrationWarning
+                        >
                           {format(day, 'd')}
                         </time>
                       </button>
 
-                      <div className="w-1 h-1 mx-auto mt-1">
+                      <div
+                        className="w-1 h-1 mx-auto mt-1"
+                        suppressHydrationWarning
+                      >
                         {appointments.some((appointment) =>
                           isSameDay(parseISO(appointment.start_date), day)
                         ) && (
@@ -170,6 +183,7 @@ export default function Calendar() {
               </div>
               <button
                 onClick={nextMonth}
+                suppressHydrationWarning
                 type="button"
                 className=" text-gray-400 hover:text-gray-500 h-1"
               >
@@ -179,13 +193,22 @@ export default function Calendar() {
             </div>
           </div>
           <section className="mt-12 md:mt-0 md:pl-8 md:text-xl flex flex-col m-auto md:m-0">
-            <h2 className="font-semibold text-gray-900">
+            <h2
+              className="font-semibold text-gray-900"
+              suppressHydrationWarning
+            >
               Schedule for{' '}
-              <time dateTime={format(selectedDay, 'yyyy-MM-dd')}>
+              <time
+                dateTime={format(selectedDay, 'yyyy-MM-dd')}
+                suppressHydrationWarning
+              >
                 {format(selectedDay, 'E MMM dd, yyy')}
               </time>
             </h2>
-            <ol className="mt-2 space-y-1 md:text-sm leading-6 text-gray-500 grow">
+            <ol
+              className="mt-2 space-y-1 md:text-sm leading-6 text-gray-500 grow"
+              suppressHydrationWarning
+            >
               {selectedDayAppointments.length > 0 ? (
                 selectedDayAppointments.map((appointment) => (
                   <Appointment
