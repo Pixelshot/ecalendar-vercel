@@ -7,6 +7,14 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.8",
+    "@heroicons/react": "^1.0.6",
+    "@prisma/client": "^4.9.0",
+    "@remix-run/serve": "^1.11.1",
+    "date-fns": "^2.29.3",
+    "esbuild": "0.17.5",
+    "isbot": "^3.6.5",
+    "react-icons": "^4.7.1",
     "@remix-run/node": "^1.13.0",
     "@remix-run/react": "^1.13.0",
     "@remix-run/vercel": "^1.13.0",
