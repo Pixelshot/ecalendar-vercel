@@ -44,10 +44,10 @@ Enjoy using the calendar app!
 To get the app running locally, you can either:
 
 ```
-1. git clone https://github.com/Pixelshot/calendar-app.git
+1. git clone https://github.com/Pixelshot/ecalendar-vercel.git
 ```
 
-2. Download the zipfile from https://github.com/Pixelshot/calendar-app.git
+2. Download the zipfile from https://github.com/Pixelshot/ecalendar-vercel.git
 
 ### Steps
 
