@@ -55,12 +55,12 @@ export default function Calendar() {
     isSameDay(parseISO(appointment.start_date), selectedDay)
   );
 
-  useEffect(() => {
-    const timeInterval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-    return () => clearInterval(timeInterval);
-  }, []);
+  // useEffect(() => {
+  //   const timeInterval = setInterval(() => {
+  //     setCurrentTime(new Date());
+  //   }, 1000);
+  //   return () => clearInterval(timeInterval);
+  // }, []);
   return (
     <div className="md:grid h-[85vh] w-screen place-items-center max-md:pt-4">
       <div className="px-4 mx-auto sm:px-7 md:max-w-6xl md:px-6">
@@ -79,7 +79,7 @@ export default function Calendar() {
                     suppressHydrationWarning
                   >
                     <ClockIcon className="h-4 mt-1 mr-1" />{' '}
-                    {format(currentTime, 'pp')}
+                    {/* {format(currentTime, 'pp')} */}
                   </h2>
                 </div>
               </div>

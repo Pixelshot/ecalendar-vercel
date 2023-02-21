@@ -33,7 +33,8 @@ For **Edit and Delete**, simply click the **Kebab Menu** located at each event.
 ## Developer Notes
 
 Unfortunately datetime-local doesn't play well with certain browsers, you may need to enter time manually.
-Enjoy using the calendar app!
+Currently React is having issues with date-fns and is ignoring `suppressHydrationWarning`
+[Related issue](https://github.com/facebook/react/issues/24270)
 
 ## Getting Started
 
