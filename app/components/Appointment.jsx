@@ -29,15 +29,18 @@ export default function Appointment({ appointment, classNames }) {
   return (
     <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100">
       <div className="flex-auto">
-        <p className="text-gray-900" suppressHydrationWarning>
+        <p className="text-gray-900" suppressHydrationWarning={true}>
           {appointment.title}
         </p>
         <p className="mt-0.5">
-          <time dateTime={appointment.start_date} suppressHydrationWarning>
+          <time
+            dateTime={appointment.start_date}
+            suppressHydrationWarning={true}
+          >
             {format(startDateTime, 'h:mm a')}
           </time>{' '}
           -{' '}
-          <time dateTime={appointment.end_date} suppressHydrationWarning>
+          <time dateTime={appointment.end_date} suppressHydrationWarning={true}>
             {isSameDay(startDateTime, endDateTime)
               ? format(endDateTime, ' h:mm a')
               : format(endDateTime, 'h:mm a do LLL')}

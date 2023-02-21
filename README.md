@@ -33,8 +33,9 @@ For **Edit and Delete**, simply click the **Kebab Menu** located at each event.
 ## Developer Notes
 
 Unfortunately datetime-local doesn't play well with certain browsers, you may need to enter time manually.
-Currently React is having issues with date-fns and is ignoring `suppressHydrationWarning`
-[Related issue](https://github.com/facebook/react/issues/24270)
+React is having issues with date-fns and is ignoring `suppressHydrationWarning` in production. Errors in console is related to this.
+[Related issue 1](https://github.com/vercel/next.js/discussions/39425)
+[Related issue 2](https://github.com/facebook/react/issues/24270)
 
 ## Getting Started
 

@@ -55,12 +55,12 @@ export default function Calendar() {
     isSameDay(parseISO(appointment.start_date), selectedDay)
   );
 
-  // useEffect(() => {
-  //   const timeInterval = setInterval(() => {
-  //     setCurrentTime(new Date());
-  //   }, 1000);
-  //   return () => clearInterval(timeInterval);
-  // }, []);
+  useEffect(() => {
+    const timeInterval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timeInterval);
+  }, []);
   return (
     <div className="md:grid h-[85vh] w-screen place-items-center max-md:pt-4">
       <div className="px-4 mx-auto sm:px-7 md:max-w-6xl md:px-6">
@@ -69,29 +69,32 @@ export default function Calendar() {
             <div className="">
               <div className="grid grid-cols-2">
                 <h2 className="text-4xl">eCalendar</h2>
-                <div className="grid grid-cols-1 justify-items-end">
-                  <h2 className="text-4xl" suppressHydrationWarning>
+                <div
+                  className="grid grid-cols-1 justify-items-end"
+                  suppressHydrationWarning={true}
+                >
+                  <h2 className="text-4xl" suppressHydrationWarning={true}>
                     {format(firstDayCurrentMonth, 'yyy')}
                   </h2>
                   {/* Clock */}
                   <h2
                     className="grid grid-cols-2 justify-items-end"
-                    suppressHydrationWarning
+                    suppressHydrationWarning={true}
                   >
                     <ClockIcon className="h-4 mt-1 mr-1" />{' '}
-                    {/* {format(currentTime, 'pp')} */}
+                    {format(currentTime, 'pp')}
                   </h2>
                 </div>
               </div>
               {/* 3 months */}
               <div className="grid grid-cols-3 place-items-center pt-4 text-lg">
-                <h2 className="text-gray-500" suppressHydrationWarning>
+                <h2 className="text-gray-500" suppressHydrationWarning={true}>
                   {format(firstDayPreviousMonth, 'MMMM')}
                 </h2>
-                <h2 className="text-2xl" suppressHydrationWarning>
+                <h2 className="text-2xl" suppressHydrationWarning={true}>
                   {format(firstDayCurrentMonth, 'MMMM')}
                 </h2>
-                <h2 className="text-gray-500" suppressHydrationWarning>
+                <h2 className="text-gray-500" suppressHydrationWarning={true}>
                   {format(firstDayNextMonth, 'MMMM')}
                 </h2>
               </div>
@@ -120,7 +123,7 @@ export default function Calendar() {
                 </div>
                 <div
                   className="grid grid-cols-7 h-56 auto-cols-min text-xs lg:gap-2 sm:text-sm sm:mt-4"
-                  suppressHydrationWarning
+                  suppressHydrationWarning={true}
                 >
                   {days.map((day, dayIdx) => (
                     <div
@@ -132,7 +135,7 @@ export default function Calendar() {
                     >
                       <button
                         type="button"
-                        suppressHydrationWarning
+                        suppressHydrationWarning={true}
                         onClick={() => setSelectedDay(day)}
                         className={classNames(
                           isEqual(day, selectedDay) && 'text-white',
@@ -161,7 +164,7 @@ export default function Calendar() {
                       >
                         <time
                           dateTime={format(day, 'yyyy-MM-dd')}
-                          suppressHydrationWarning
+                          suppressHydrationWarning={true}
                         >
                           {format(day, 'd')}
                         </time>
@@ -169,7 +172,7 @@ export default function Calendar() {
 
                       <div
                         className="w-1 h-1 mx-auto mt-1"
-                        suppressHydrationWarning
+                        suppressHydrationWarning={true}
                       >
                         {appointments.some((appointment) =>
                           isSameDay(parseISO(appointment.start_date), day)
@@ -183,7 +186,7 @@ export default function Calendar() {
               </div>
               <button
                 onClick={nextMonth}
-                suppressHydrationWarning
+                suppressHydrationWarning={true}
                 type="button"
                 className=" text-gray-400 hover:text-gray-500 h-1"
               >
@@ -195,19 +198,19 @@ export default function Calendar() {
           <section className="mt-12 md:mt-0 md:pl-8 md:text-xl flex flex-col m-auto md:m-0">
             <h2
               className="font-semibold text-gray-900"
-              suppressHydrationWarning
+              suppressHydrationWarning={true}
             >
               Schedule for{' '}
               <time
                 dateTime={format(selectedDay, 'yyyy-MM-dd')}
-                suppressHydrationWarning
+                suppressHydrationWarning={true}
               >
                 {format(selectedDay, 'E MMM dd, yyy')}
               </time>
             </h2>
             <ol
               className="mt-2 space-y-1 md:text-sm leading-6 text-gray-500 grow"
-              suppressHydrationWarning
+              suppressHydrationWarning={true}
             >
               {selectedDayAppointments.length > 0 ? (
                 selectedDayAppointments.map((appointment) => (
