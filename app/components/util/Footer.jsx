@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <div className="max-md:mt-24">
       {/* Github Link */}
-      <div className="grid place-content-center mb-6">
+      <div className="grid place-content-center mb-6 mt-16">
         <a
           target="_blank"
           href="https://github.com/Pixelshot/ecalendar-vercel"
