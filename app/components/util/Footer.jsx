@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="max-sm:mt-24">
+    <div className="max-md:mt-24">
       {/* Github Link */}
       <div className="grid place-content-center mb-6">
         <a

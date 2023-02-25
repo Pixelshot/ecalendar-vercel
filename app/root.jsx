@@ -14,7 +14,7 @@ export const meta = () => ({
 export default function App() {
   return (
     <Document title="eCalendar App">
-      <Outlet />
+      <Outlet className="md:h-[85vh]" />
       <Footer />
     </Document>
   );
