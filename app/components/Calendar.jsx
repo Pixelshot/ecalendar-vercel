@@ -110,7 +110,7 @@ export default function Calendar() {
                 className="text-gray-400 hover:text-gray-500 h-1"
               >
                 <span className="sr-only">Previous month</span>
-                <ChevronLeftIcon className="w-10 h-10" />
+                <ChevronLeftIcon className="w-10 h-10" aria-hidden="false" />
               </button>
               <div className="flex flex-col flex-grow md:justify-items-center">
                 <div className="grid grid-cols-7 text-xs sm:max-md:text-sm sm:gap-2 mt-10 text-center">
