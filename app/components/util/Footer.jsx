@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <>
+    <div className="max-sm:mt-24">
       {/* Github Link */}
       <div className="grid place-content-center mb-6">
         <a
@@ -174,6 +174,6 @@ export default function Footer() {
           </g>
         </svg>
       </p>
-    </>
+    </div>
   );
 }
