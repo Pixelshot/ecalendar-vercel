@@ -1,10 +1,9 @@
 import {
-  // ChevronLeftIcon,
-  // ChevronRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
   ClockIcon,
 } from '@heroicons/react/solid';
 
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/Io';
 import {
   add,
   eachDayOfInterval,
@@ -111,8 +110,7 @@ export default function Calendar() {
                 className="text-gray-400 hover:text-gray-500 h-1"
               >
                 <span className="sr-only">Previous month</span>
-                {/* <ChevronLeftIcon className="w-10 h-10" /> */}
-                <IoIosArrowBack className="w-10 h-10" />
+                <ChevronLeftIcon className="w-6 h-10 md:w-10" />
               </button>
               <div className="flex flex-col flex-grow md:justify-items-center">
                 <div className="grid grid-cols-7 text-xs sm:max-md:text-sm sm:gap-2 mt-10 text-center">
@@ -194,8 +192,7 @@ export default function Calendar() {
                 className=" text-gray-400 hover:text-gray-500 h-1"
               >
                 <span className="sr-only">Next month</span>
-                {/* <ChevronRightIcon className="w-10 h-10" /> */}
-                <IoIosArrowForward className="w-10 h-10" />
+                <ChevronRightIcon className="w-6 h-10 md:w-10 md:h-10" />
               </button>
             </div>
           </div>
